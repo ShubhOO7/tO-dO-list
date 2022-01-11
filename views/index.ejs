@@ -1,0 +1,56 @@
+
+
+<%- include("header"); %> 
+
+    <nav class="navbar fixed-top navbar-light" style="background-color: #e3f2fd;">
+
+        <div class="container-fluid">
+          <a class="navbar-brand tit" href="#"><%=title %></a>
+          <form method="get" action="/<%= btnAct %>">
+            <button class="btn btn-outline-primary" type="submit" href="/work"><%= btnName %> </button>
+        </form>        
+        </div>
+    </nav>
+
+    <div class="Phase1">
+
+
+
+        <div class="Phase2 child-1">
+            <div class="child-1-body">
+                <img src="photo/calendar.png" alt="" class="img"> 
+                <div class="child-1-body-2">
+                    <h1><%= kindofDay %> </h1>   
+                </div>
+                <div class="child-1-body-3">
+                    <h1 style="font-size: 10rem;"><%= kindofDate %>  </h1>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="Phase2 child-2">
+            <div class="box">
+                <div class="box-bo">
+                    <% for(var i=0;i<newListItems.length;i++){ %>  
+                        <div class="item">
+                            <input type="checkbox" >
+                            <p class="p"><%= newListItems[i] %></p>
+                        </div>
+                    <% } %> 
+                </div>
+                <form action="/" method="post" class="item">
+                    <input type="text" placeholder="New Task" name="newItem"  class="type" autocomplete="off" >
+                    <button class="plus" type="submit" name=list  value=<%= title%>   > + </button>
+                </form>
+            </div>
+        </div>
+
+        <img src="photo/student.png" alt="" class="student">
+    </div>
+    <!-- <img src="photo/calendar.png" alt=""> -->
+
+
+
+<%- include("footer"); %> 
