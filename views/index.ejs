@@ -7,7 +7,7 @@
         <div class="container-fluid">
           <a class="navbar-brand tit" href="#"><%=title %></a>
           <form method="get" action="/<%= btnAct %>">
-            <button class="btn btn-outline-primary" type="submit" href="/work"><%= btnName %> </button>
+            <button class="btn btn-outline-primary" type="submit" href=""><%= btnName %> </button>
         </form>        
         </div>
     </nav>
@@ -33,12 +33,16 @@
         <div class="Phase2 child-2">
             <div class="box">
                 <div class="box-bo">
-                    <% for(var i=0;i<newListItems.length;i++){ %>  
-                        <div class="item">
-                            <input type="checkbox" >
-                            <p class="p"><%= newListItems[i] %></p>
-                        </div>
-                    <% } %> 
+                    
+                   <% newListItems.forEach(function(item){ %>  
+                        <form method="post" action="/delete">
+                            <div class="item">
+                                <input type="checkbox" name="checkBox" value="<%= item._id %>" onChange="this.form.submit()" >
+                                <p class="p"><%= item.name %></p>
+                                <input type="hidden" name="listName" value="<%= title %> "></input>
+                            </div>
+                        </form>
+                    <% }) %> 
                 </div>
                 <form action="/" method="post" class="item">
                     <input type="text" placeholder="New Task" name="newItem"  class="type" autocomplete="off" >

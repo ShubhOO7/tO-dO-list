@@ -97,7 +97,7 @@ input[type="text"] {
     padding-bottom: 6px;
     border-width: 0;
   }
-  form {
+  form.item{
     text-align: center;
     margin-left: 20px;
   }
@@ -134,7 +134,7 @@ input[type="text"] {
   }
 
   .navbar-brand{
-    font-size: 2.8rem!important;
+    font-size: 3.5rem!important;
   }
   input:checked+p {
     text-decoration: line-through;
